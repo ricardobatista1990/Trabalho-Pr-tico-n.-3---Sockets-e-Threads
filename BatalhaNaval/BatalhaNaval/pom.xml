@@ -46,7 +46,7 @@
                             <classifier>client</classifier>
                             <archive>
                                 <manifest>
-                                    <mainClass>batalhanaval.client.Cliente</mainClass>
+                                    <mainClass>batalhanaval.client.ClienteGUI</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>

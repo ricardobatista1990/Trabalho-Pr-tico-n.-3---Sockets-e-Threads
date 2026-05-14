@@ -60,13 +60,13 @@ public class Navio implements Serializable {
     public int getColunaInicio() { return colunaInicio; }
     public boolean isHorizontal() { return horizontal; }
 
-    /** Serialização simples: TipoNavio|linha|coluna|horizontal */
+    /** Serialização simples: TipoNavio,linha,coluna,horizontal (vírgula para não colidir com o separador do protocolo) */
     public String serializar() {
-        return tipo.name() + "|" + linhaInicio + "|" + colunaInicio + "|" + horizontal;
+        return tipo.name() + "," + linhaInicio + "," + colunaInicio + "," + horizontal;
     }
 
     public static Navio desserializar(String dados) {
-        String[] partes = dados.split("\\|");
+        String[] partes = dados.split(",");
         TipoNavio tipo = TipoNavio.valueOf(partes[0]);
         int linha = Integer.parseInt(partes[1]);
         int coluna = Integer.parseInt(partes[2]);
